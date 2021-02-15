@@ -433,6 +433,12 @@ public class MainSearchActivity extends AppCompatActivity
                 startActivity(i);
             }
             break;
+            case R.id.addRequestmenuItem:
+            {
+                AddRequest requestDialogue = new AddRequest();
+                requestDialogue.show(getSupportFragmentManager(), "addrequestdialogue");
+            }
+            break;
             case R.id.menuLogout:
             {
 

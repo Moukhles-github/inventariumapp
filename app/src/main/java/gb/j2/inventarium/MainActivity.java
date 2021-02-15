@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,6 +14,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.BufferedReader;
@@ -140,15 +143,14 @@ public class MainActivity extends AppCompatActivity
                 prefsEdit.putBoolean("remember", false);
                 prefsEdit.commit();
             }
-            Intent i;
-            if(session.Type().equals("1"))
+            if(session.Type().equals("2"))
             {
-                i = new Intent(MainActivity.this, MainSearchActivity.class);
-                i.putExtra("initial", 1);
-                i.putExtra("keyword", "");
-                startActivity(i);
 
-                finish();
+                //instantiate the api web interface
+                String requestUrl2 = utility.baseUrl + "ws/ws_users.php?op=16&oprid=" + session.ID();
+                wsInterface apiCal2 = new wsInterface(requestUrl2, 2);
+
+                apiCal2.execute();
             }
             else
             {
@@ -214,6 +216,34 @@ public class MainActivity extends AppCompatActivity
                     Toast.makeText(MainActivity.this, "Could not sign in", Toast.LENGTH_SHORT).show();
                 }
                 animate(0);
+            }
+            else
+            {
+                if(!rawData.equals(""))
+                {
+                    try
+                    {
+                        JSONArray jArray = new JSONArray(rawData);
+                        for (int i = 0; i < jArray.length(); i++)
+                        {
+                            JSONObject jObject = jArray.getJSONObject(i);
+
+                            session.SetWorkstationID(jObject.getInt("workstationID"));
+                            session.SetWorkstationName(jObject.getString("workstationName"));
+                        }
+                    }
+                    catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    Intent i;
+                    i = new Intent(MainActivity.this, MainSearchActivity.class);
+                    i.putExtra("initial", 1);
+                    i.putExtra("keyword", "");
+                    startActivity(i);
+
+                    finish();
+                }
             }
         }
     }

@@ -9,6 +9,9 @@
         app:showAsAction="collapseActionView|ifRoom" />
 
     <item
+        android:id="@+id/addRequestmenuItem"
+        android:title="Request Item" />
+    <item
         android:id="@+id/userMenuAcc"
         android:title="Account" />
     <item android:title="Logout"
