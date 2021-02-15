@@ -1,0 +1,36 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="start|left"
+    android:padding="0dp"
+    android:weightSum="1">
+
+
+    <ImageView
+        android:id="@+id/homeActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="clip_horizontal|start|left"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="3dp"
+        android:adjustViewBounds="true"
+        android:onClick="takeMeHome"
+        android:paddingStart="0dp"
+        android:src="@drawable/mic" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center_vertical"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="Inventarium"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+</LinearLayout>

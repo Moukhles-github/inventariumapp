@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Inventarium</string>
+
+    <string-array name="orderSpinner">
+        <item>Oldest First</item>
+        <item>Newest First</item>
+    </string-array>
+
+    <string-array name="showSpinner">
+        <item>All</item>
+        <item>Canceled</item>
+        <item>Waiting</item>
+        <item>Accepted</item>
+        <item>Handled</item>
+        <item>Returned</item>
+    </string-array>
+    <string name="title_activity_account">AccountActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>

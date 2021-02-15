@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewRequestID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/imageView3"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:fontFamily="monospace"
+        android:text="#55"
+        android:textColor="#474747"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewRequestDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toStartOf="@+id/imageViewRequestStatus"
+        android:layout_toEndOf="@+id/textViewRequestID"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:text="15-04-2021"
+        android:textAlignment="textEnd"
+        android:textColor="#474747"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imageViewRequestStatus"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        tools:srcCompat="@drawable/statwaiting" />
+
+    <TextView
+        android:id="@+id/textViewRequestItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewRequestID"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:text="CAT 350 Excavator"
+        android:textColor="#3E3E3E"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewRequestItemLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewRequestItemName"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:text="HVD 12445" />
+
+    <TextView
+        android:id="@+id/textViewRequestStatusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageViewRequestStatus"
+        android:layout_alignStart="@+id/imageViewRequestStatus"
+        android:layout_alignEnd="@+id/imageViewRequestStatus"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="0dp"
+        android:text="waiting"
+        android:textAlignment="center"
+        android:textSize="10sp" />
+
+    <ImageButton
+        android:id="@+id/imageButtonRequestCancel"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textViewRequestDate"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/imageViewRequestStatus"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/close" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/request" />
+
+</RelativeLayout>
