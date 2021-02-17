@@ -344,6 +344,7 @@ public class MainSearchActivity extends AppCompatActivity
             catch (IOException e)
             {
                 e.printStackTrace();
+                Log.e("testing", e.getMessage());
             }
 
             return null;
@@ -352,6 +353,8 @@ public class MainSearchActivity extends AppCompatActivity
         @Override
         protected void onPostExecute(Object o)
         {
+            Log.e("testing",urlIn);
+            Log.e("testing", rawData);
             //if there was no data loaded
             if (rawData.equals(""))
             {

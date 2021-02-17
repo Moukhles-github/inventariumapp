@@ -198,6 +198,7 @@ public class MainActivity extends AppCompatActivity
                 }
             } catch (IOException e) {
                 e.printStackTrace();
+                Log.e("testing", e.getMessage());
             }
 
             return null;
